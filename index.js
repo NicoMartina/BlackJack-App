@@ -12,6 +12,12 @@ let message = "";
 let messageEl = document.getElementById("message-el");
 let sumEl = document.getElementById("sum-el");
 let cardsEl = document.getElementById("cards-el");
+let player = {
+  name: "Nico",
+  chips: 145,
+};
+let playerEl = document.getElementById("player-el");
+playerEl.textContent = player.name + ": $" + player.chips;
 //Here we user a function to get a random card using Math.random(chooses a number between 0.00 and 0.99) and Math.floor (takes out decimals)
 function getRandomCard() {
   let randomCard = Math.floor(Math.random() * 13) + 1;
@@ -57,12 +63,14 @@ function renderGame() {
 }
 //Here we use another function so that if the sum above is less than 21 we can draw another card.
 function newCard() {
-  let card = getRandomCard();
-  sum += card;
-  //.push adds to the end of the sentence.
-  cards.push(card);
-  console.log(cards);
-  renderGame();
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    //.push adds to the end of the sentence.
+    cards.push(card);
+    console.log(cards);
+    renderGame();
+  }
 }
 //Math.randow() gives you a random number from 0.0000000 to 0.999999999999
 //Math.random() * 6; Here the answers will multiply and become 0.0000 to 5.9999
@@ -75,3 +83,5 @@ function newCard() {
 // }
 
 // console.log(rollDice());
+
+//the AND operator is signaled with &&. it tells you that if both conditions are true/false you can run the code. the OR operator is signaled with || it tells you that if either condition is true/false you can run the code.
