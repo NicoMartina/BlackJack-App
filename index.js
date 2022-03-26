@@ -63,6 +63,7 @@ function renderGame() {
 }
 //Here we use another function so that if the sum above is less than 21 we can draw another card.
 function newCard() {
+  //AND operator &&(both need to be true/flase) OR operator ||(means one or the other need to be true/flase)
   if (isAlive === true && hasBlackJack === false) {
     let card = getRandomCard();
     sum += card;
@@ -76,12 +77,3 @@ function newCard() {
 //Math.random() * 6; Here the answers will multiply and become 0.0000 to 5.9999
 //Math.floor(3.765456) removes the decimal numbers. the answer becomes 3
 //let randomNumber = Math.floor(Math.random() * 6); Here the answers are  0 to 5
-
-// function rollDice() {
-//   let randomNumber = Math.floor(Math.random() * 6) + 1;
-//   return randomNumber;
-// }
-
-// console.log(rollDice());
-
-//the AND operator is signaled with &&. it tells you that if both conditions are true/false you can run the code. the OR operator is signaled with || it tells you that if either condition is true/false you can run the code.
